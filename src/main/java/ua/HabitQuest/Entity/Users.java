@@ -4,13 +4,18 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+
+@Entity
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
