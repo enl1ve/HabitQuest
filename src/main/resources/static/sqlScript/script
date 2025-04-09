@@ -6,3 +6,18 @@ CREATE TABLE USERS(
                       email varchar(100) UNIQUE NOT NULL ,
                       bio varchar(1000)
 )
+
+CREATE TABLE habit (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    description TEXT,
+    create_date DATE,
+    primary_habit DATE,
+    final_habit DATE,
+    streak_days INT,
+    users_id BIGINT,
+    CONSTRAINT fk_users
+        FOREIGN KEY (users_id)
+        REFERENCES users(id)
+        ON DELETE CASCADE
+);
